@@ -22,7 +22,7 @@ namespace dumblog_canvas_wpf
         public previewWindow(string preview)
         {
             InitializeComponent();
-            previewRenderer.NavigateToString("<!DOCTYPE html><html><head></head><body>"+preview);
+            previewRenderer.NavigateToString("<!DOCTYPE html><html><head></head><body style=\"font-size: small; font-family: Arial, Helvetica, sans-serif;\">" + preview);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
