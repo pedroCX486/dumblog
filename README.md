@@ -17,6 +17,8 @@ Why not?
 - .NET Framework 4 is required to run the editor.
 
 - To publish it on GitHub Pages (because it hates binaries) you need a .gitignore file (so you don't publish a compiled editor and the source) containing this: [Ee]ditor/
+
+- If you wish to use a different file for the first post instead of the default, change the file name to the one you generate on the archive.lst file (same applies if you want to delete an entry in the archive)
   
 - The code is an abomination. Look at your own disclosure.
 
