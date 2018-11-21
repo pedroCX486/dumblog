@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-store" />
+		<meta http-equiv="expires" content="-1" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="scripts/activeLink.js"></script>
+        <script type="text/javascript" src="scripts/parseArchive.js"></script>
+        <script type="text/javascript" src="scripts/parseConfigs.js"></script>
+
+        <title id="HTMLtitle">...</title>
+    </head>
+    <body style="margin-bottom: 10%";>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" id="navbarBrand" href="index.html">...</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="index" href="index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="archives" href="archives.html">Archives <span class="sr-only">(current)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" data-toggle="modal" data-target="#aboutModal">About</a>
+                </li>
+                </ul>
+                <span class="navbar-text">
+                    Powered by Dumblog
+                </span>
+            </div>
+        </nav>
+
+        <!-- Modal -->
+        <div id="aboutModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+        
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">About</h4>
+                    </div>
+                    <div class="modal-body" id="about">...</div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <h2 style="margin-left: 15%; margin-top: 5%;">The Archives</h2>
+
+        <div id="archiveList" style="margin: 0 auto; margin-top: 5%; max-width: 80%;">...</div>
+
+    </body>
