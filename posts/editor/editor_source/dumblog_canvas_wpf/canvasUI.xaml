@@ -27,7 +27,7 @@
         <Button x:Name="redoButton" Content="-&gt;" HorizontalAlignment="Left" Margin="454,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="RedoButton_Click" ToolTip="Redo"/>
         <Button x:Name="previewButton" Content="P" HorizontalAlignment="Left" Margin="717,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="PreviewButton_Click" ToolTip="Preview Post"/>
         <Button x:Name="helpButton" Content="?" HorizontalAlignment="Left" Margin="752,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="HelpButton_Click" TabIndex="2" ToolTip="Need help?"/>
-        <Button x:Name="clearButton" Content="CLR" HorizontalAlignment="Left" Margin="586,38,0,0" VerticalAlignment="Top" Width="30" Height="29" ToolTip="Clears everything from the editor." Click="ClearButton_Click"/>
+        <Button x:Name="clearButton" Content="CLR" HorizontalAlignment="Left" Margin="590,38,0,0" VerticalAlignment="Top" Width="30" Height="30" ToolTip="Clears everything from the editor." Click="ClearButton_Click"/>
 
     </Grid>
 </Window>

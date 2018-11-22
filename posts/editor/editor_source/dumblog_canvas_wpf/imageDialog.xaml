@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dumblog_canvas_wpf"
         mc:Ignorable="d"
-        Title="Add Image" Height="184.005" Width="366.161"
+        Title="Add Image" Height="207.006" Width="366.161"
         ResizeMode="NoResize">
     <Grid RenderTransformOrigin="0.507,0.517">
         <Label x:Name="itemDescription" Content="Image URL:" HorizontalAlignment="Left" Margin="6,19,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="imageURL" HorizontalAlignment="Left" Height="23" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <Button x:Name="okButton" Content="OK" HorizontalAlignment="Left" Margin="63,100,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="OkButton_Click"/>
-        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="198,100,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" RenderTransformOrigin="0.518,0.451" Click="CancelButton_Click" Focusable="True" TabIndex="0"/>
+        <TextBox x:Name="imageURL" HorizontalAlignment="Left" Height="23" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" TabIndex="0"/>
+        <Button x:Name="okButton" Content="OK" HorizontalAlignment="Left" Margin="61,122,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="OkButton_Click" TabIndex="2"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="202,122,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" RenderTransformOrigin="0.518,0.451" Click="CancelButton_Click" Focusable="True"/>
+        <CheckBox x:Name="makeClickable" Content="Make image clickable?" HorizontalAlignment="Left" Margin="96,82,0,0" VerticalAlignment="Top" Checked="MakeClickable_CheckedChanged" Unchecked="MakeClickable_CheckedChanged" TabIndex="1"/>
 
     </Grid>
 </Window>

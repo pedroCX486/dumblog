@@ -19,6 +19,8 @@ namespace dumblog_canvas_wpf
     /// </summary>
     public partial class addImageDialog : Window
     {
+        bool clickable = false;
+
         public addImageDialog(string imgLink)
         {
             InitializeComponent();
@@ -30,6 +32,11 @@ namespace dumblog_canvas_wpf
             {
                 this.imageURL.Text = imgLink;
             }
+        }
+
+        private void MakeClickable_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            clickable = (makeClickable.IsChecked == true);
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
@@ -45,6 +52,11 @@ namespace dumblog_canvas_wpf
         public string getImageURL()
         {
             return this.imageURL.Text;
+        }
+
+        public bool getClickable()
+        {
+            return this.clickable;
         }
 
         private void addImageDialog_KeyDown(object sender, KeyEventArgs e)

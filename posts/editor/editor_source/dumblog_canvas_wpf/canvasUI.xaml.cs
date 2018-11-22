@@ -69,7 +69,15 @@ namespace dumblog_canvas_wpf
                 {
                     dialog("No image URL added.");
                 }
-                return imageInput.getImageURL();
+
+                if (imageInput.getClickable())
+                {
+                    return "<a href=\""+ imageInput.getImageURL() + "\" target=\"_blank\"><img style=\"max-width: 70%; height: auto;\" src=\"" + imageInput.getImageURL() + "\"></img></a>";
+                }
+                else
+                {
+                    return "<img style=\"max-width: 70%; height: auto;\" src=\"" + imageInput.getImageURL() + "\"></img>";
+                }
             }
             else
             {
@@ -79,7 +87,7 @@ namespace dumblog_canvas_wpf
 
         }
 
-        public Tuple<string, string> addHyperlink(string addURL, string addText)
+        public string addHyperlink(string addURL, string addText)
         {
             addHyperlinkDialog hyperlinkInput = new addHyperlinkDialog(addURL, addText);
             hyperlinkInput.ShowDialog();
@@ -97,7 +105,7 @@ namespace dumblog_canvas_wpf
                 {
                     dialog("No text added.");
                 }
-                return new Tuple<string, string>(hyperlinkInput.getHyperlinkURL(), hyperlinkInput.getHyperlinkText());
+                return "<a href=\"" + hyperlinkInput.getHyperlinkURL() + "\" target=\"_blank\">" + hyperlinkInput.getHyperlinkText() + "</a>";
             }
             else
             {
@@ -175,52 +183,24 @@ namespace dumblog_canvas_wpf
 
         private void HyperlinkButton_Click(object sender, EventArgs e)
         {
-            string hyperlink;
-            string hyperlinkText;
-            Tuple<string, string> result;
+            string hyperlinkHTML;
 
             if (postContent.SelectedText.Contains("http") || postContent.SelectedText.Contains("www"))
             {
-                result = addHyperlink(postContent.SelectedText, "");
-                if (result == null)
-                {
-                    hyperlink = "";
-                    hyperlinkText = "";
-                }
-                else
-                {
-                    hyperlink = result.Item1;
-                    hyperlinkText = result.Item2;
-                }
+                hyperlinkHTML = addHyperlink(postContent.SelectedText, "");
             }
             else
             {
-                result = addHyperlink("", postContent.SelectedText);
-
-                if (result == null)
-                {
-                    hyperlink = "";
-                    hyperlinkText = "";
-                }
-                else
-                {
-                    hyperlink = result.Item1;
-                    hyperlinkText = result.Item2;
-                }
+                hyperlinkHTML = addHyperlink("", postContent.SelectedText);
             }
 
-
-            if (result != null && postContent.SelectedText.Equals(""))
+            if (hyperlinkHTML != null && postContent.SelectedText.Equals(""))
             {
-                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, "<a href=\"" + hyperlink + "\">" + hyperlinkText + "</a>");
+                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, hyperlinkHTML);
             }
-            else if (result != null && !postContent.SelectedText.Equals(""))
+            else if (hyperlinkHTML != null && !postContent.SelectedText.Equals(""))
             {
-                postContent.SelectedText = "<a href=\"" + hyperlink + "\">" + hyperlinkText + "</a>";
-            }
-            else if (result != null)
-            {
-                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, "<a href=\"\"></a>");
+                postContent.SelectedText = hyperlinkHTML;
             }
 
             requestFocus();
@@ -228,22 +208,16 @@ namespace dumblog_canvas_wpf
 
         private void ImgButton_Click(object sender, EventArgs e)
         {
-            string imgLink = postContent.SelectedText;
-
-            imgLink = addImage(imgLink);
+            string imgHTML = addImage(postContent.SelectedText);
 
 
-            if (imgLink != null && !imgLink.Equals("") && postContent.SelectedText.Equals(""))
+            if (imgHTML != null && postContent.SelectedText.Equals(""))
             {
-                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, "<img style=\"max-width: 50%; height: auto;\" src=\"" + imgLink + "\"></img>");
+                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, imgHTML);
             }
-            else if (imgLink != null && !imgLink.Equals("") && !postContent.SelectedText.Equals(""))
+            else if (imgHTML != null && !postContent.SelectedText.Equals(""))
             {
-                postContent.SelectedText = "<img style=\"max-width: 50%; height: auto;\" src=\"" + imgLink + "\"></img>";
-            }
-            else if (imgLink != null)
-            {
-                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, "<img style=\"max-width: 50%; height: auto;\" src=\"\"></img>");
+                postContent.SelectedText = imgHTML;
             }
 
             requestFocus();
@@ -288,7 +262,7 @@ namespace dumblog_canvas_wpf
             {
                 postTitle.Text = result.Item1;
                 postContent.Text = result.Item2;
-                timestamp.Content = "Timestamp: " + result.Item3;
+                timestamp.Content = "Saved Timestamp: " + result.Item3;
             }
 
             requestFocus();
