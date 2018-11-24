@@ -13,7 +13,7 @@ $(document).ready(function () {
 			            
             $.getJSON("/posts/"+fileList[i]+".post", function(data) {
 
-                $('#archiveList').append('<a href="post.html?'+fileList[i]+'"</a><div class="card"><div class="card-body">'+`${data.title}`+'</div></div><br>');
+                $('#archiveList').append('<a href="post.html?'+fileList[i]+'"><div class="card"><div class="card-body">'+`${data.title}`+'</div></div></a><br>');
                 //You gotta love how sometimes it FUCKING MIXES THE RESULTS. ASYNC EH?
         
             });
