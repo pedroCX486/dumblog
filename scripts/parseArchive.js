@@ -4,19 +4,19 @@ $(document).ready(function () {
 
     $.getJSON(archiveFile, function(data) {
 
-        var fileList = `${data.filenames}`
-        fileList = fileList.split(",");
+        //var fileList = `${data.filenames}`
+        //fileList = fileList.split(",");
 
         $('#archiveList').html("");
 
-        for(let i = 0;i < fileList.length;i++){
+        $.each(data.filenames, function(index, filenames) {
 			            
-            $.getJSON("/posts/"+fileList[i]+".post", function(data) {
+            $.getJSON("/posts/"+filenames+".post", function(postContent) {
 
-                $('#archiveList').append('<a href="post.html?'+fileList[i]+'"><div class="card"><div class="card-body">'+`${data.title}`+'</div></div></a><br>');
+                $('#archiveList').append('<a href="post.html?'+filenames+'"><div class="card"><div class="card-body">'+`${postContent.title}`+'</div></div></a><br>');
                 //You gotta love how sometimes it FUCKING MIXES THE RESULTS. ASYNC EH?
-        
+				//I tried mitigating it until I get a better fix.
             });
-        }
+        });
     });
 });
