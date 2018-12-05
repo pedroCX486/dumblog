@@ -20,7 +20,7 @@
         <Button x:Name="saveButton" Content="Save and Add" HorizontalAlignment="Left" Margin="10,515,0,0" VerticalAlignment="Top" Width="100" Click="SaveButton_Click" TabIndex="3" ToolTip="Saves a file and adds it to the blog archive."/>
         <Button x:Name="loadButton" Content="Load" HorizontalAlignment="Left" Margin="627,515,0,0" VerticalAlignment="Top" Width="75" Click="LoadButton_Click" TabIndex="4" ToolTip="Loads a file."/>
         <Button x:Name="saveAsButton" Content="Save As..." HorizontalAlignment="Left" Margin="707,515,0,0" VerticalAlignment="Top" Width="75" Click="SaveAsButton_Click" TabIndex="5" ToolTip="Saves the file somewhere you want and skips adding to the archive..."/>
-        <Label x:Name="timestamp" Content="" HorizontalAlignment="Left" Margin="6,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,2.615" ToolTip="Original Timestamp"/>
+        <Label x:Name="timestamp" Content="" HorizontalAlignment="Left" Margin="108,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,2.615" ToolTip="Original Timestamp"/>
         <Button x:Name="imgButton" Content="IMG" HorizontalAlignment="Left" Margin="220,38,0,0" VerticalAlignment="Top" Width="30" Height="30" RenderTransformOrigin="0.033,-0.267" Click="ImgButton_Click" ToolTip="Add Image"/>
         <Button x:Name="centerButton" Content="CENTER" HorizontalAlignment="Left" Margin="255,38,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="-0.52,-0.25" Height="30" Click="CenterButton_Click" ToolTip="Center Content"/>
         <Button x:Name="undoButton" Content="&lt;-" HorizontalAlignment="Left" Margin="419,38,0,0" VerticalAlignment="Top" Width="30" Height="30" RenderTransformOrigin="0.8,0.367" Click="UndoButton_Click" ToolTip="Undo"/>
@@ -28,6 +28,7 @@
         <Button x:Name="previewButton" Content="P" HorizontalAlignment="Left" Margin="717,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="PreviewButton_Click" ToolTip="Preview Post"/>
         <Button x:Name="helpButton" Content="?" HorizontalAlignment="Left" Margin="752,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="HelpButton_Click" TabIndex="2" ToolTip="Need help?"/>
         <Button x:Name="clearButton" Content="CLR" HorizontalAlignment="Left" Margin="590,38,0,0" VerticalAlignment="Top" Width="30" Height="30" ToolTip="Clears everything from the editor." Click="ClearButton_Click"/>
+        <Label x:Name="timestamplabel" Content="Saved Timestamp: " HorizontalAlignment="Left" Margin="5,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.895,0.346"/>
 
     </Grid>
 </Window>

@@ -25,6 +25,11 @@ $(document).ready(function () {
             timestamp = new Date(timestamp*1000);
             $("#timestamp").html(timestamp);
 
+            var editedTimestamp = `${data.editedTimestamp}`
+            editedTimestamp = new Date(editedTimestamp*1000);
+            $("#editedTimestamp").html("Edited on: " + editedTimestamp);
+            $("#editedTimestamp").css("visibility","visible");
+
             var content = `${data.content}`
             $("#content").html(content);
         });
@@ -38,6 +43,11 @@ $(document).ready(function () {
             var timestamp = `${data.timestamp}`
             timestamp = new Date(timestamp*1000);
             $("#timestamp2").html(timestamp);
+
+            var editedTimestamp = `${data.editedTimestamp}`
+            editedTimestamp = new Date(editedTimestamp*1000);
+            $("#editedTimestamp2").html("Edited on: " + editedTimestamp);
+            $("#editedTimestamp2").css("visibility","visible");
 
             var content = `${data.content}`
             $("#content2").html(content);

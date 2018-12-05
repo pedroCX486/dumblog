@@ -31,7 +31,7 @@ namespace dumblog_canvas_wpf
         {
             if (!fileSaved)
             {
-                if (MessageBox.Show("Are you sure you want to quit wihtout saving?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Are you sure you want to quit without saving?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     Environment.Exit(0);
                 }
@@ -39,6 +39,18 @@ namespace dumblog_canvas_wpf
             else
             {
                 Environment.Exit(0);
+            }
+        }
+
+        public static bool timestampExists(string timestamp)
+        {
+            if(timestamp != null && timestamp.Equals(""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 

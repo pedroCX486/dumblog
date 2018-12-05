@@ -13,13 +13,14 @@ namespace dumblog_canvas_wpf
     class saveFile
     {
 
-        public saveFile(string filename, string title, string postContent, string timestamp)
+        public saveFile(string filename, string title, string postContent, string timestamp, string editedTimestamp)
         {
             postContent = postContent.Replace(Environment.NewLine, "<br>");
 
             postContent content = new postContent();
             content.title = title;
             content.content = postContent;
+            content.editedTimestamp = editedTimestamp;
             content.timestamp = timestamp;
 
             bool archiveUpdated = updateArchive(filename);
@@ -32,9 +33,13 @@ namespace dumblog_canvas_wpf
             else
             {
                 saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if(filename == null || filename.Equals(""))
+                {
+                    filename = "untitled";
+                }
             }
 
-            File.WriteAllText(saveLocation + filename + ".post", JsonConvert.SerializeObject(content, Formatting.Indented));
+            File.WriteAllText(saveLocation + "\\"  + filename + ".post", JsonConvert.SerializeObject(content, Formatting.Indented));
 
             checks.setFileSaved(true);
 
@@ -77,8 +82,8 @@ namespace dumblog_canvas_wpf
                 
             }
 
-            openDialog = new OpenFileDialog();
-            openDialog.Filter = "Dumblog Archive Files (*.lst)|*.lst|All Files (*.*)|*.*";
+            //openDialog = new OpenFileDialog();
+            //openDialog.Filter = "Dumblog Archive Files (*.lst)|*.lst|All Files (*.*)|*.*";
 
             archive = JsonConvert.DeserializeObject<archiveContent>(File.ReadAllText(archiveLocation));
 

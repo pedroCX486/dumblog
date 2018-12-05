@@ -88,8 +88,11 @@
     <Compile Include="previewWindow.xaml.cs">
       <DependentUpon>previewWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="saveFIle.cs" />
+    <Compile Include="saveFile.cs" />
     <Compile Include="saveFileAs.cs" />
+    <Compile Include="archiveManager.xaml.cs">
+      <DependentUpon>archiveManager.xaml</DependentUpon>
+    </Compile>
     <Page Include="canvasUI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="previewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="archiveManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

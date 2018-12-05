@@ -21,12 +21,14 @@ namespace dumblog_canvas_wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        string currentFile;
         Stack<string> undoList = new Stack<string>();
 
         public MainWindow()
         {
             InitializeComponent();
+            timestamplabel.Visibility = Visibility.Hidden;
+            this.KeyDown += MainWindow_KeyDown;
+
             checks.startUpCheck();
             postTitle.Focus();
         }
@@ -44,6 +46,8 @@ namespace dumblog_canvas_wpf
 
         public string generateFilename()
         {
+            string currentFile;
+
             currentFile = Regex.Replace(postTitle.Text, "[^a-zA-Z0-9_]+", "-");
 
             currentFile = currentFile.ToLower();
@@ -262,7 +266,8 @@ namespace dumblog_canvas_wpf
             {
                 postTitle.Text = result.Item1;
                 postContent.Text = result.Item2;
-                timestamp.Content = "Saved Timestamp: " + result.Item3;
+                timestamp.Content = result.Item3;
+                timestamplabel.Visibility = Visibility.Visible;
             }
 
             requestFocus();
@@ -270,22 +275,28 @@ namespace dumblog_canvas_wpf
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
-            currentFile = generateFilename();
-
-            new saveFile(currentFile, postTitle.Text, postContent.Text, unixTimestamp.ToString());
+            if (checks.timestampExists(timestamp.Content.ToString()))
+            {
+                new saveFile(generateFilename(), postTitle.Text, postContent.Text, timestamp.Content.ToString(), getTimestamp());
+            }
+            else
+            {
+                new saveFile(generateFilename(), postTitle.Text, postContent.Text, getTimestamp(), "");
+            }
 
             requestFocus();
         }
 
         private void SaveAsButton_Click(object sender, EventArgs e)
         {
-            int unixTimestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
-            currentFile = generateFilename();
-
-            new saveFileAs(currentFile, postTitle.Text, postContent.Text, unixTimestamp.ToString());
+            if (checks.timestampExists(timestamp.Content.ToString()))
+            {
+                new saveFileAs(generateFilename(), postTitle.Text, postContent.Text, timestamp.Content.ToString(), getTimestamp());
+            }
+            else
+            {
+                new saveFileAs(generateFilename(), postTitle.Text, postContent.Text, getTimestamp(), "");
+            }
 
             requestFocus();
         }
@@ -335,6 +346,20 @@ namespace dumblog_canvas_wpf
             }
 
             requestFocus();
+        }
+
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                ArchiveManager archiveManager = new ArchiveManager();
+                archiveManager.ShowDialog();
+            }
+        }
+
+        static string getTimestamp()
+        {
+            return ((int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds).ToString();
         }
     }
 }

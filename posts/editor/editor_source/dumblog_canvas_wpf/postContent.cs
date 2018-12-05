@@ -10,6 +10,7 @@ namespace dumblog_canvas_wpf
     {
         public string title { get; set; }
         public string timestamp { get; set; }
+        public string editedTimestamp { get; set; }
         public string content { get; set; }
     }
 }
