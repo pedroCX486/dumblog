@@ -22,14 +22,21 @@ Why not?
   
 - The code is an abomination. Look at your own disclosure.
 
-## Libs used (all required to compile)
+## Libs used:
 
-* Newtonsoft JSON (as a NuGet package)
+* Web Front-End
+	* JQuery
+	* Bootstrap 4.1
+	* Popper
+	
+* Editor (required to compile)
+	* Newtonsoft JSON (as a NuGet package)
+
+## Icons used:
+
+* Favicon - Web Front-End: [UI Essence - new file by Laura Reen](https://www.shareicon.net/document-write-file-new-create-887243)
+* EXE Icon - Editor: [Flat Paint Brush by Clipartmax](https://www.clipartmax.com/middle/m2i8i8m2A0i8d3d3_open-flat-paint-brush-icon/)
 
 ## Post notes:
 
 This project is licensed under the WTFPL. The libs used are each under their original licenses.
-
-## TODO:
-
-- An Window in the editor to manage the archive entries.

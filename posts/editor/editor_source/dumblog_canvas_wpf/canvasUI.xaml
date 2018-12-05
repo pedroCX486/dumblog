@@ -28,7 +28,7 @@
         <Button x:Name="previewButton" Content="P" HorizontalAlignment="Left" Margin="717,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="PreviewButton_Click" ToolTip="Preview Post"/>
         <Button x:Name="helpButton" Content="?" HorizontalAlignment="Left" Margin="752,38,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="HelpButton_Click" TabIndex="2" ToolTip="Need help?"/>
         <Button x:Name="clearButton" Content="CLR" HorizontalAlignment="Left" Margin="590,38,0,0" VerticalAlignment="Top" Width="30" Height="30" ToolTip="Clears everything from the editor." Click="ClearButton_Click"/>
-        <Label x:Name="timestamplabel" Content="Saved Timestamp: " HorizontalAlignment="Left" Margin="5,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.895,0.346"/>
+        <Label x:Name="timestampLabel" Content="Saved Timestamp: " HorizontalAlignment="Left" Margin="5,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.895,0.346"/>
 
     </Grid>
 </Window>

@@ -29,6 +29,7 @@ namespace dumblog_canvas_wpf
         public ArchiveManager()
         {
             InitializeComponent();
+            this.KeyDown += archiveManager_KeyDown;
         }
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
@@ -93,6 +94,14 @@ namespace dumblog_canvas_wpf
             {
                 MessageBox.Show("Couldn't update file. Is there a permission problem or is the file on the 'posts' directory?", "Message");
                 return false;
+            }
+        }
+
+        private void archiveManager_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
             }
         }
     }

@@ -22,9 +22,9 @@ namespace dumblog_canvas_wpf
         public addHyperlinkDialog(string url, string text)
         {
             InitializeComponent();
-            hyperlinkURL.Focus();
-
             this.KeyDown += addHyperlinkDialog_KeyDown;
+
+            hyperlinkURL.Focus();
 
             if (!url.Equals(""))
             {

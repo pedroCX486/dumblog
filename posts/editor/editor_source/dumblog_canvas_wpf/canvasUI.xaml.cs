@@ -26,7 +26,7 @@ namespace dumblog_canvas_wpf
         public MainWindow()
         {
             InitializeComponent();
-            timestamplabel.Visibility = Visibility.Hidden;
+            timestampLabel.Visibility = Visibility.Hidden;
             this.KeyDown += MainWindow_KeyDown;
 
             checks.startUpCheck();
@@ -267,7 +267,7 @@ namespace dumblog_canvas_wpf
                 postTitle.Text = result.Item1;
                 postContent.Text = result.Item2;
                 timestamp.Content = result.Item3;
-                timestamplabel.Visibility = Visibility.Visible;
+                timestampLabel.Visibility = Visibility.Visible;
             }
 
             requestFocus();

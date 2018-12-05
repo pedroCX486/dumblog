@@ -24,9 +24,9 @@ namespace dumblog_canvas_wpf
         public addImageDialog(string imgLink)
         {
             InitializeComponent();
-            imageURL.Focus();
-
             this.KeyDown += addImageDialog_KeyDown;
+
+            imageURL.Focus();
 
             if (imgLink != null && !imgLink.Equals(""))
             {
