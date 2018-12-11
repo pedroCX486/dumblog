@@ -39,4 +39,4 @@ Why not?
 
 ## Post notes:
 
-This project is licensed under the WTFPL. The libs used are each under their original licenses.
+This project is licensed under the WTFPL. The assets used are each under their original licenses.
