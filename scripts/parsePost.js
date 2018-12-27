@@ -29,6 +29,10 @@ $(document).ready(function () {
             $("#title").html(title);
 			$("#title").wrap('<a href="'+window.location.origin+'/post.html?'+simpleFilename+'" target="_self"></a>');
 			
+			if(url.includes("post.html")){
+				document.title = title;
+			}
+			
             var timestamp = `${data.timestamp}`
             timestamp = new Date(timestamp*1000);
             $("#timestamp").html(timestamp);
@@ -39,11 +43,6 @@ $(document).ready(function () {
                 $("#editedTimestamp").html("Edited on: " + editedTimestamp);
                 $("#editedTimestamp").css("visibility","visible");
             }
-			
-			if(url.includes("post.html")){
-				$(document).prop('title', title);
-				$(parent.document).prop('title', title);
-			}
 			
             var content = `${data.content}`
             $("#content").html(content.replace(/<div class="quote">/g, quote));
