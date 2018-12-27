@@ -1,18 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace dumblog_canvas_wpf
 {
@@ -240,6 +230,19 @@ namespace dumblog_canvas_wpf
             requestFocus();
         }
 
+        private void QuoteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (postContent.SelectedText.Equals(""))
+            {
+                postContent.Text = postContent.Text.Insert(postContent.SelectionStart, "<div class=\"quote\"></div>");
+            }
+            else
+            {
+                postContent.SelectedText = "<div class=\"quote\">" + postContent.SelectedText + "</div>";
+            }
+            requestFocus();
+        }
+
         private void HelpButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("If you clicked here you're probably confused... As you should." +
@@ -361,5 +364,6 @@ namespace dumblog_canvas_wpf
         {
             return ((int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds).ToString();
         }
+
     }
 }

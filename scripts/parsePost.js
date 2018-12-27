@@ -5,6 +5,9 @@ var url = document.URL;
 var filename;
 var filename2;
 
+//This is a hack and this makes me feel dirty.
+var quote =  '<div class="alert alert-secondary" style="width:90%; margin: 0 auto;"><h1 class="alert-heading"><img style="max-width: 8%; height: auto;" src="quote.png"/></h4>';
+
 $(document).ready(function () {
 
     $.getJSON(archive, function(result){
@@ -31,9 +34,10 @@ $(document).ready(function () {
                 $("#editedTimestamp").html("Edited on: " + editedTimestamp);
                 $("#editedTimestamp").css("visibility","visible");
             }
-
+			
             var content = `${data.content}`
-            $("#content").html(content);
+            $("#content").html(content.replace(/<div class="quote">/g, quote));
+			
         });
 
 		//This one will only load (of course) if we're on the homepage)
@@ -54,7 +58,7 @@ $(document).ready(function () {
             }
 
             var content = `${data.content}`
-            $("#content2").html(content);
+            $("#content2").html(content.replace('<div class="quote">', quote));
         });
     });
 });
