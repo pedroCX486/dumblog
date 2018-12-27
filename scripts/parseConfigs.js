@@ -8,7 +8,9 @@ $(document).ready(function () {
 
         var about = `${data.about}`
 
-        document.title = title;
+        $(document).prop('title', title);
+		$(parent.document).prop('title', title);
+		
         document.getElementById("navbarBrand").innerHTML=title;
         document.getElementById("about").innerHTML=about;
 

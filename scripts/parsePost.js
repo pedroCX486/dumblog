@@ -41,7 +41,8 @@ $(document).ready(function () {
             }
 			
 			if(url.includes("post.html")){
-				document.title = title;
+				$(document).prop('title', title);
+				$(parent.document).prop('title', title);
 			}
 			
             var content = `${data.content}`
