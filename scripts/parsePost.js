@@ -14,16 +14,21 @@ $(document).ready(function () {
 
         if(url.includes("post.html")){
             filename = "/posts/"+url.substring(url.lastIndexOf('?')+1)+".post";
+			simpleFilename = url.substring(url.lastIndexOf('?')+1);
         }else{ //This means it's on the home page
             filename2 = "/posts/"+result.filenames[1]+".post";
             filename = "/posts/"+result.filenames[0]+".post";
+			
+			simpleFilename2 = result.filenames[1];
+			simpleFilename = result.filenames[0];
         }
 
         $.getJSON(filename, function(data) {
             
             var title = `${data.title}`
             $("#title").html(title);
-
+			$("#title").wrap('<a href="'+window.location.origin+'/post.html?'+simpleFilename+'" target="_self"></a>');
+			
             var timestamp = `${data.timestamp}`
             timestamp = new Date(timestamp*1000);
             $("#timestamp").html(timestamp);
@@ -35,6 +40,10 @@ $(document).ready(function () {
                 $("#editedTimestamp").css("visibility","visible");
             }
 			
+			if(url.includes("post.html")){
+				document.title = title;
+			}
+			
             var content = `${data.content}`
             $("#content").html(content.replace(/<div class="quote">/g, quote));
 			
@@ -45,6 +54,7 @@ $(document).ready(function () {
             
             var title = `${data.title}`
             $("#title2").html(title);
+			$("#title2").wrap('<a href="'+window.location.origin+'/post.html?'+simpleFilename2+'" target="_self"></a>');
 
             var timestamp = `${data.timestamp}`
             timestamp = new Date(timestamp*1000);
