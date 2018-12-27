@@ -30,7 +30,7 @@ $(document).ready(function () {
 			$("#title").wrap('<a href="'+window.location.origin+'/post.html?'+simpleFilename+'" target="_self"></a>');
 			
 			if(url.includes("post.html")){
-				document.title = title;
+				document.title = title + " - " + document.title;
 			}
 			
             var timestamp = `${data.timestamp}`
