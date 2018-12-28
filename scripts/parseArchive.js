@@ -4,9 +4,6 @@ $(document).ready(function () {
 
     $.getJSON(archiveFile, function(data) {
 
-        //var fileList = `${data.filenames}`
-        //fileList = fileList.split(",");
-
         $('#archiveList').html("");
 
         $.each(data.filenames, function(index, filenames) {
