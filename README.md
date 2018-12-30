@@ -35,6 +35,7 @@ Why not?
 ## Icons used:
 
 * Favicon - Web Front-End: [UI Essence - new file by Laura Reen](https://www.shareicon.net/document-write-file-new-create-887243)
+* Quote - Web Front-End: [Font Awesome - Quote Left](https://fontawesome.com/v4.7.0/icon/quote-left)
 * EXE Icon - Editor: [Flat Paint Brush by Clipartmax](https://www.clipartmax.com/middle/m2i8i8m2A0i8d3d3_open-flat-paint-brush-icon/)
 
 ## Post notes:
