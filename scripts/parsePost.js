@@ -4,7 +4,7 @@ var archive = "/posts/archive.lst";
 var url = document.URL;
 
 //This is a hack and this makes me feel dirty.
-var quote =  '<div class="alert alert-secondary" style="width:90%; margin: 0 auto;"><h1 class="alert-heading"><img src="quote.png"/></h1>';
+var quote =  '<div class="alert alert-secondary" style="width:90%; margin: 0 auto;"><h1 class="alert-heading"><img src="quote.png"/></h1> <hr>';
 
 $(document).ready(function () {
 
