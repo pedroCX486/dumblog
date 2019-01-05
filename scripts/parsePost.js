@@ -4,7 +4,7 @@ var archive = "/posts/archive.lst";
 var url = document.URL;
 
 //This is a hack and this makes me feel dirty.
-var quote =  '<div class="alert alert-secondary" style="width:90%; margin: 0 auto;"><h1 class="alert-heading"><img style="max-width: 8%; height: auto;" src="quote.png"/></h4>';
+var quote =  '<div class="alert alert-secondary" style="width:90%; margin: 0 auto;"><h1 class="alert-heading"><img src="quote.png"/></h1>';
 
 $(document).ready(function () {
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
 				}
 				
 				var content = `${data.content}`
-				$("#content").html(content.replace(/<div class="quote">/g, quote));
+				$("#content").html(content.replace(/<div class="quote"><br>/g, quote));
 			});
 		}
 		
@@ -57,7 +57,7 @@ $(document).ready(function () {
 				}
 
 				var content = `${data.content}`
-				$("#content2").html(content.replace(/<div class="quote">/g, quote));
+				$("#content2").html(content.replace(/<div class="quote"><br>/g, quote));
 			});
 		}
 
