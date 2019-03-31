@@ -9,5 +9,6 @@ namespace dumblog_canvas_wpf
     class archiveContent
     {
         public string[] filenames { get; set; }
+        public string[] postTitles { get; set;  }
     }
 }

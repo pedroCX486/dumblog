@@ -30,7 +30,6 @@ namespace dumblog_canvas_wpf
             if(postContent.SelectedText.Length == 0)
             {
                 postContent.Select(postContent.Text.Length,0);
-
             }
         }
 

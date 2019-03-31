@@ -25,6 +25,7 @@ namespace dumblog_canvas_wpf
         archiveContent archive;
         string archiveLocation = "../archive.lst";
         List<String> filenames;
+        List<String> postTitles;
 
         public ArchiveManager()
         {
@@ -38,6 +39,7 @@ namespace dumblog_canvas_wpf
             {
                 archive = JsonConvert.DeserializeObject<archiveContent>(File.ReadAllText(archiveLocation));
                 filenames = new List<string>(archive.filenames);
+                postTitles = new List<string>(archive.postTitles);
                 listBox.ItemsSource = filenames;
             } catch (FileNotFoundException)
             {
@@ -48,13 +50,14 @@ namespace dumblog_canvas_wpf
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             filenames.RemoveAt(this.listBox.SelectedIndex);
+            postTitles.RemoveAt(this.listBox.SelectedIndex);
             listBox.ItemsSource = null;
             listBox.ItemsSource = filenames;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            saveArchiveFile(archive, filenames);
+            saveArchiveFile(archive, filenames, postTitles);
         }
 
         private void RemoveAndDeletebutton_Click(object sender, RoutedEventArgs e)
@@ -65,6 +68,7 @@ namespace dumblog_canvas_wpf
                 {
                     File.Delete("../" + filenames[this.listBox.SelectedIndex] + ".post");
                     filenames.RemoveAt(this.listBox.SelectedIndex);
+                    postTitles.RemoveAt(this.listBox.SelectedIndex);
                     listBox.ItemsSource = null;
                     listBox.ItemsSource = filenames;
                 }
@@ -73,7 +77,7 @@ namespace dumblog_canvas_wpf
                     MessageBox.Show("Couldn't remove or find the specified file. Is there a permission problem or is the file on the 'posts' directory?", "Message");
                 }
 
-                saveArchiveFile(archive, filenames);
+                saveArchiveFile(archive, filenames, postTitles);
             }
             else
             {
@@ -81,10 +85,11 @@ namespace dumblog_canvas_wpf
             }
         }
 
-        static bool saveArchiveFile(archiveContent archive, List<String> filenames)
+        static bool saveArchiveFile(archiveContent archive, List<String> filenames, List<string> postTitles)
         {
             try
             {
+                archive.postTitles = postTitles.ToArray();
                 archive.filenames = filenames.ToArray();
                 File.WriteAllText("../archive.lst", JsonConvert.SerializeObject(archive, Formatting.Indented));
                 MessageBox.Show("Archive file updated!", "Message");

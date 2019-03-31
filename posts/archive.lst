@@ -1,5 +1,8 @@
 {
   "filenames": [
-    "hello-world",	
+    "hello-world"
+  ],
+  "postTitles": [
+    "Hello World"
   ]
 }

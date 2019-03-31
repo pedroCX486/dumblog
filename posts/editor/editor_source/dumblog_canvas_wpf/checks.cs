@@ -18,7 +18,7 @@ namespace dumblog_canvas_wpf
 
             if (!File.Exists("../archive.lst"))
             {
-                MessageBox.Show("You don't seem to be running the editor in the 'editor' folder of your Dumblog install.\n\nI'll save your posts on your desktop!", "Warning");
+                MessageBox.Show("You don't seem to be running the editor in the 'editor' folder of your Dumblog install.", "Warning");
             }
             else
             {
