@@ -82,7 +82,7 @@ namespace dumblog_canvas_wpf
 
             archive = JsonConvert.DeserializeObject<archiveContent>(File.ReadAllText(archiveLocation));
 
-            List<String> filenames;
+            List<string> filenames;
             List<string> postTitles;
 
             filenames = new List<string>(archive.filenames);
