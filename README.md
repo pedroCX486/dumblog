@@ -1,3 +1,7 @@
+### Notice
+
+This version of the Dumblog platform was discontinued. The atrocious code is to be forgotten. Check out the new sleek version in Angular (here)[https://github.com/pedroCX486/ngx-dumblog].
+
 # Dumblog
 
 An small (and dumb) blog platform made in HTML and JS.
