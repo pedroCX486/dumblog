@@ -1,6 +1,6 @@
 ### Notice
 
-This version of the Dumblog platform was discontinued. This atrocious mash of code has to be forgotten. Check out the new sleek version in Angular (here)[https://github.com/pedroCX486/ngx-dumblog].
+This version of the Dumblog platform was discontinued. This atrocious mash of code has to be forgotten. Check out the new sleek version in Angular [here](https://github.com/pedroCX486/ngx-dumblog).
 
 # Dumblog
 
